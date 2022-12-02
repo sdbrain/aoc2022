@@ -27,7 +27,8 @@ impl Day1 {
     }
 
     pub fn top_3_elves_v1(&self, f_string: &str) -> u32 {
-        let lines: Vec<&str> = f_string.split_terminator("\n").collect();
+        let mut lines: Vec<&str> = f_string.split_terminator("\n").collect();
+        lines.push("");
 
         let mut max = vec![0, 0, 0];
         let mut sum: u32 = 0;
@@ -112,7 +113,7 @@ mod test_day1 {
 10000"###;
         let day1 = Day1::new();
         let sum = day1.top_3_elves_v1(input);
-        assert_eq!(sum, 41000);
+        assert_eq!(sum, 45000);
     }
     #[test]
     fn test_top_3_elves_v2() {
@@ -133,6 +134,6 @@ mod test_day1 {
 10000"###;
         let day1 = Day1::new();
         let sum = day1.top_3_elves_v2(input);
-        assert_eq!(sum, 41000);
+        assert_eq!(sum, 45000);
     }
 }
