@@ -1,6 +1,6 @@
 use std::{env, fs, process};
 
-pub mod day1;
+use aoc2022::day1;
 
 fn main() {
     let Some(command) = env::args().nth(1) else {
